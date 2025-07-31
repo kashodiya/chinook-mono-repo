@@ -1,46 +1,31 @@
-# chinook-crud-api-mcp
+Metadata-Version: 2.4
+Name: my-mcp
+Version: 0.1.0
+Summary: MCP server for Chinook Database API
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+Requires-Dist: fastmcp
+Requires-Dist: requests
 
-This project consists of two main components:
+# Chinook Database MCP Server
 
-1. **MCP Server**: A FastMCP server that provides tools for interacting with the Chinook Database API.
-2. **MCP Agent**: A CLI agent that uses LLM to understand user requests and execute the appropriate MCP tools.
+This is an MCP server that provides tools for interacting with the Chinook Database API.
 
 ## Installation
 
 ```bash
 uv pip install -e .
-pip install langchain langchain-core langgraph langchain-anthropic litellm
 ```
 
 ## Usage
 
-### Running the MCP Server
-
-Start the MCP server:
+Run the server:
 
 ```bash
 python main.py
 ```
 
 The server will start on port 52796.
-
-### Running the MCP Agent
-
-Start the MCP agent:
-
-```bash
-python mcp_agent.py
-```
-
-The agent will connect to the MCP server and provide a conversational interface for interacting with the Chinook Database.
-
-Example commands:
-- "List all tables in the database"
-- "Show me the first 5 artists"
-- "Get details for artist with ID 1"
-- "Create a new artist named 'New Band'"
-- "Update artist 10 to have the name 'Updated Band Name'"
-- "Delete artist with ID 15"
 
 ## Available Tools
 

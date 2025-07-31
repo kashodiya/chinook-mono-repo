@@ -4,8 +4,8 @@ This monorepo contains multiple projects related to the Chinook database system.
 
 ## Projects
 
-- **chinook-crud-api-mcp**: Microservice Control Plane for Chinook CRUD API
 - **chinook-crud-api**: Core CRUD API for Chinook database
+- **chinook-crud-api-mcp**: MCP agent that uses chinook-crud-api to allow users to work with the data.
 
 ## Getting Started
 
@@ -21,6 +21,7 @@ chinook-mono-repo/
     └── microagents/         # Microagents configuration
 ```
 
-## Contributing
+## OpenHands
+- This project is mostly develped by OpenHands AI
+- .openhands/microagents/repo.md this file is used by OpenHands AI
 
-Please refer to the individual project READMEs for contribution guidelines.
