@@ -3,7 +3,7 @@ from fastmcp import FastMCP
 from typing import Dict, Any, List, Optional
 
 # API base URL
-API_BASE_URL = "http://host.docker.internal:8000"
+API_BASE_URL = "http://localhost:50514"
 
 # Get available tables
 def get_tables() -> List[str]:
