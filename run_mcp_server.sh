@@ -6,8 +6,14 @@
 echo "Starting Chinook MCP server..."
 cd "$(dirname "$0")/chinook-crud-api-mcp"
 
+# Check if uv is installed
+if ! command -v uv &> /dev/null; then
+    echo "Installing uv package installer..."
+    pip install -q uv
+fi
+
 # Install dependencies if needed
-pip install -q fastmcp requests
+uv pip install -q fastmcp requests
 
 # Check if API server is running
 if ! curl -s http://localhost:50514/ > /dev/null; then
@@ -17,5 +23,5 @@ if ! curl -s http://localhost:50514/ > /dev/null; then
 fi
 
 # Run the server
-python mcp_server.py
+uv run mcp_server.py
 

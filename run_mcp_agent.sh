@@ -7,8 +7,14 @@
 echo "Starting Chinook MCP agent..."
 cd "$(dirname "$0")/chinook-crud-api-mcp"
 
+# Check if uv is installed
+if ! command -v uv &> /dev/null; then
+    echo "Installing uv package installer..."
+    pip install -q uv
+fi
+
 # Install dependencies if needed
-pip install -q langchain langchain-core langgraph litellm langchain_community
+uv pip install -q langchain langchain-core langgraph litellm langchain_community
 
 # Check if MCP server is running
 if ! curl -s -H "Accept: text/event-stream" http://localhost:52796/mcp > /dev/null; then
@@ -28,6 +34,6 @@ if [ -z "$OPENAI_API_KEY" ]; then
 fi
 
 # Run the agent
-python mcp_agent.py
+uv run mcp_agent.py
 
 

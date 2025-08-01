@@ -11,8 +11,14 @@ if [ ! -f "chinook.db" ]; then
     exit 1
 fi
 
+# Check if uv is installed
+if ! command -v uv &> /dev/null; then
+    echo "Installing uv package installer..."
+    pip install -q uv
+fi
+
 # Install dependencies if needed
-pip install -q fastapi uvicorn
+uv pip install -q fastapi uvicorn
 
 # Run the server
-python server.py
+uv run server.py
