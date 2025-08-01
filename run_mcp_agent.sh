@@ -30,7 +30,8 @@ if [ -z "$OPENAI_API_KEY" ]; then
     echo "You can set it using: export OPENAI_API_KEY=your_api_key"
     echo ""
     echo "Continuing with a dummy key for testing purposes..."
-    export OPENAI_API_KEY="sk-dummy"
+    export OPENAI_API_KEY="sk-123123123"
+
 fi
 
 # Run the agent

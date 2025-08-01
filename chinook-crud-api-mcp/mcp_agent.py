@@ -16,12 +16,11 @@ from litellm import completion
 from langchain_core.language_models import BaseChatModel
 from langchain_community.chat_models import ChatOpenAI
 
-# Configure LLM
-# Using ChatOpenAI as a replacement for ChatLiteLLM
 llm = ChatOpenAI(
-    model="gpt-3.5-turbo",
+    model="US Claude 3.7 Sonnet By Anthropic (Served via LiteLLM)",
     temperature=0.1,
-    max_tokens=4000
+    max_tokens=4000,
+    base_url="https://ec2-3-224-104-215.compute-1.amazonaws.com:7105",
 )
 
 # MCP client setup
