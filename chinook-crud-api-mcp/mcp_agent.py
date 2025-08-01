@@ -13,16 +13,15 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 from langgraph.graph import StateGraph, END
 from litellm import completion
-from langchain_core.language_models.chat_models import ChatLiteLLM
+from langchain_core.language_models import BaseChatModel
+from langchain_community.chat_models import ChatOpenAI
 
 # Configure LLM
-llm = ChatLiteLLM(
-    model="US Claude 3.7 Sonnet By Anthropic (Served via LiteLLM)",
-    api_base="https://ec2-3-224-104-215.compute-1.amazonaws.com:7105",
+# Using ChatOpenAI as a replacement for ChatLiteLLM
+llm = ChatOpenAI(
+    model="gpt-3.5-turbo",
     temperature=0.1,
-    max_tokens=4000,
-    api_key="not-needed",  # Will be overridden by api_base
-    verify_ssl=False  # For self-signed certificates
+    max_tokens=4000
 )
 
 # MCP client setup

@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+server.py
+openapi_crud.egg-info/PKG-INFO
+openapi_crud.egg-info/SOURCES.txt
+openapi_crud.egg-info/dependency_links.txt
+openapi_crud.egg-info/requires.txt
+openapi_crud.egg-info/top_level.txt

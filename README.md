@@ -51,11 +51,35 @@ Each project has its own README with specific setup instructions. The general fl
 2. Start the MCP server (depends on the CRUD API server being running)
 3. Run the MCP agent for natural language interaction (depends on the MCP server being running)
 
+### Using Run Scripts
+
+For convenience, we provide run scripts to start each component:
+
+```bash
+# Start the API server
+./run_api_server.sh
+
+# Start the MCP server
+./run_mcp_server.sh
+
+# Start the MCP agent
+./run_mcp_agent.sh
+```
+
 **Important**: There are dependencies between these components:
 - The MCP server depends on the CRUD API server to be running first
 - The MCP agent depends on the MCP server to be running first
 
 Make sure to start the services in the correct order to ensure proper functionality.
+
+## Testing
+
+For detailed instructions on how to start the services and run tests, please refer to the [Testing Guide](TESTING.md). The testing guide includes:
+
+- Instructions for starting each service
+- Available test scripts and what they verify
+- Explanation of available MCP tools
+- Troubleshooting tips
 
 ## Repository Structure
 
@@ -63,6 +87,13 @@ Make sure to start the services in the correct order to ensure proper functional
 chinook-mono-repo/
 ├── chinook-crud-api/        # Core CRUD API
 ├── chinook-crud-api-mcp/    # MCP implementation
+├── run_api_server.sh        # Script to start the API server
+├── run_mcp_server.sh        # Script to start the MCP server
+├── run_mcp_agent.sh         # Script to start the MCP agent
+├── test_mcp.py              # Basic API and MCP server test
+├── test_mcp_functionality.py # MCP functionality test
+├── test_mcp_agent.py        # MCP agent test
+├── TESTING.md               # Testing documentation
 └── .openhands/              # Repository metadata
 ```
 
