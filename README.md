@@ -48,8 +48,14 @@ Agent: Here are the top 5 artists with the most albums:
 Each project has its own README with specific setup instructions. The general flow is:
 
 1. Start the CRUD API server
-2. Start the MCP server
-3. Run the MCP agent for natural language interaction
+2. Start the MCP server (depends on the CRUD API server being running)
+3. Run the MCP agent for natural language interaction (depends on the MCP server being running)
+
+**Important**: There are dependencies between these components:
+- The MCP server depends on the CRUD API server to be running first
+- The MCP agent depends on the MCP server to be running first
+
+Make sure to start the services in the correct order to ensure proper functionality.
 
 ## Repository Structure
 

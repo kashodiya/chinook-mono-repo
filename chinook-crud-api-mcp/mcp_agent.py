@@ -9,19 +9,20 @@ from typing import Dict, List, Any, Optional, TypedDict, Annotated
 from fastmcp import Client
 from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-from langchain_anthropic import ChatAnthropic
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 from langgraph.graph import StateGraph, END
+from litellm import completion
+from langchain_core.language_models.chat_models import ChatLiteLLM
 
 # Configure LLM
-llm = ChatAnthropic(
-    model="claude-3-7-sonnet-20240229",
-    anthropic_api_key="not-needed",  # Will be overridden by base_url
-    base_url="https://ec2-3-224-104-215.compute-1.amazonaws.com:7105/v1",
+llm = ChatLiteLLM(
+    model="US Claude 3.7 Sonnet By Anthropic (Served via LiteLLM)",
+    api_base="https://ec2-3-224-104-215.compute-1.amazonaws.com:7105",
     temperature=0.1,
     max_tokens=4000,
-    model_kwargs={"verify_ssl": False}  # For self-signed certificates
+    api_key="not-needed",  # Will be overridden by api_base
+    verify_ssl=False  # For self-signed certificates
 )
 
 # MCP client setup

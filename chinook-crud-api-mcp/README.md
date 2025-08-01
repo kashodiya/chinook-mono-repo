@@ -9,7 +9,7 @@ This project consists of two main components:
 
 ```bash
 uv pip install -e .
-pip install langchain langchain-core langgraph langchain-anthropic litellm
+pip install langchain langchain-core langgraph litellm
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ pip install langchain langchain-core langgraph langchain-anthropic litellm
 Start the MCP server:
 
 ```bash
-python main.py
+python mcp_server.py
 ```
 
 The server will start on port 52796.
